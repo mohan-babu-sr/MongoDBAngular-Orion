@@ -1,0 +1,22 @@
+<div class="container">
+    <form (ngSubmit)="saveMedicineDetails()">
+        <div class="inputStyles"> 
+            <div class="heading">
+                Enter Medicine Details
+            </div>
+            <div class="form-floating mb-3" *ngIf="!isIdPresent">
+                <input class="form-control" type="text" name="id" [(ngModel)]="medicineDetails.id" placeholder="Enter the Medicine ID" />
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" name="name" [(ngModel)]="medicineDetails.name" placeholder="Enter the name" />
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="number" min="0" name="price" [(ngModel)]="medicineDetails.price"
+                placeholder="Enter Medicine price" />
+            </div>
+        </div>
+        <div class="buttonStyles1">
+            <button type="submit" class="btn btn-outline-success">Add Medicine</button>
+        </div>
+    </form>
+</div>

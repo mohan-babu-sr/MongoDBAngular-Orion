@@ -1,0 +1,38 @@
+<div class="mainBody">
+  <div class="mainHeader">
+    <h3>List of medicine</h3>
+    <div class="searchFilter">
+      <input type="text" [(ngModel)]="filters.keyword" name="keyword" (input)="nameFilter()" placeholder="Search">
+    </div>
+  </div>
+
+  <div class="table">
+    <table class="table table-bordered">
+      <thead style="position: sticky;top: 0" class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Medicine-ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let medicineDetails of medicineDetails;let indexOfMedicine=index;">
+        <tr>
+          <th scope="row">{{indexOfMedicine+1}}</th>
+          <th scope="row">{{medicineDetails.id}}</th>
+          <td>{{medicineDetails.name}}</td>
+          <td>{{medicineDetails.price}}</td>
+          <td>
+            <button type="submit" class="btn btn-outline-primary" (click)="editMedicine(medicineDetails.id)">
+              <img src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png" />
+            </button>
+            <button type="submit" class="btn btn-outline-danger" (click)="deleteMedicine(medicineDetails.id)">
+              <img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
